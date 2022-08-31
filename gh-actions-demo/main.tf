@@ -1,23 +1,24 @@
-#sample tf
 terraform {
   required_providers {
     snowflake = {
       source  = "Snowflake-Labs/snowflake"
-      version = "~> 0.35"
+      version = "0.43.0"
+    }
+  }
+
+  backend "remote" {
+    organization = "psubash-build-2022"
+
+    workspaces {
+      name = "gh-actions-demo"
     }
   }
 }
 
 provider "snowflake" {
-  role  = "SYSADMIN"
 }
 
-resource "snowflake_database" "db" {
-  name     = "TF_DEMO"
-}
-
-resource "snowflake_warehouse" "warehouse" {
-  name           = "TF_DEMO"
-  warehouse_size = "small"
-  auto_suspend = 60
+resource "snowflake_database" "tf_demo_db" {
+  name    = "TF_DEMO_DB"
+  comment = "Database for Snowflake Terraform demo"
 }
