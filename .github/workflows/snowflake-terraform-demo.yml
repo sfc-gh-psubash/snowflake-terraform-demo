@@ -9,6 +9,9 @@ jobs:
   snowflake-terraform-demo:
     name: "Snowflake Terraform Demo Job"
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        workspaces: [./gh-actions-demo]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -30,6 +33,6 @@ jobs:
         id: validate
         run: terraform validate -no-color
 
-      - name: Terraform Plan
-        id: plan
-        run: terraform plan
+      - name: Terraform Apply
+        id: apply
+        run: terraform apply -auto-approve
