@@ -36,6 +36,14 @@ resource "snowflake_table" "tf_test" {
     nullable = false
     comment  = "data column comment"
   }
+
+  column {
+    name     = "create_ts"
+    type     = "timestamp"
+    nullable = false
+    comment  = "ts column comment"
+  }
+
   comment = "table comment"
 }
 
