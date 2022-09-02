@@ -31,7 +31,7 @@ resource "snowflake_table" "tf_test" {
   }
 
   column {
-    name     = "data"
+    name     = "newdata"
     type     = "VARCHAR(16777216)"
     nullable = false
     comment  = "data column comment"
