@@ -19,22 +19,22 @@ provider "snowflake" {
 }
 
 resource "snowflake_table" "tf_test" {
-  database            = "TF_DEMO_DB"
-  schema              = "TF_DEMO"
-  name                = "TF_TEST"
+  database = "TF_DEMO_DB"
+  schema   = "TF_DEMO"
+  name     = "TF_TEST"
 
   column {
     name     = "id"
     type     = "NUMBER(38,0)"
     nullable = true
-    comment = "id column comment"
+    comment  = "id column comment"
   }
 
   column {
     name     = "data"
     type     = "VARCHAR(16777216)"
     nullable = false
-    comment = "data column comment"
+    comment  = "data column comment"
   }
   comment = "table comment"
 }
