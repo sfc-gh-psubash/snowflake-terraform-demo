@@ -9,9 +9,9 @@ jobs:
   snowflake-terraform-demo:
     name: "Snowflake Terraform Demo Job"
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        workspaces: [./gh-actions-demo]
+#    strategy:
+#      matrix:
+#        workspaces: [./gh-actions-demo]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
 
       - name: Terraform Init
         id: init
-        working-directory: ${{ matrix.workspaces }}
+#        working-directory: ${{ matrix.workspaces }}
         run: terraform init
 
       - name: Terraform Validate
@@ -36,10 +36,10 @@ jobs:
 
       - name: Terraform plan
         id: plan
-        working-directory: ${{ matrix.workspaces }}
+#        working-directory: ${{ matrix.workspaces }}
         run: terraform validate -no-color
         
       - name: Terraform Apply
         id: apply
-        working-directory: ${{ matrix.workspaces }}
+#        working-directory: ${{ matrix.workspaces }}
         run: terraform apply -auto-approve
