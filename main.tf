@@ -31,6 +31,13 @@ resource "snowflake_table" "tf_test" {
   }
 
   column {
+    name     = "emp_name"
+    type     = "VARCHAR(16)"
+    nullable = true
+    comment  = "name column comment"
+  }
+
+  column {
     name     = "newdata"
     type     = "VARCHAR(16777216)"
     nullable = false
