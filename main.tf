@@ -25,7 +25,7 @@ resource "snowflake_table" "tf_test" {
 
   column {
     name     = "id"
-    type     = "VARCHAR(38)"
+    type     = "NUMBER(38,0)"
     nullable = true
     comment  = "id column comment"
   }
