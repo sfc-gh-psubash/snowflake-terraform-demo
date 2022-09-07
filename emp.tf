@@ -1,7 +1,7 @@
-resource "snowflake_table" "tf_emp" {
+resource "snowflake_table" "tf_emp_old" {
   database = "TF_DEMO_DB"
   schema   = "TF_DEMO"
-  name     = "TF_EMP"
+  name     = "TF_EMP_OLD"
 
   column {
     name     = "emp_id"
