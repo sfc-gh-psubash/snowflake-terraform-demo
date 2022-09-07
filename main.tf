@@ -32,7 +32,7 @@ resource "snowflake_table" "tf_test" {
 
   column {
     name     = "emp_name"
-    type     = "VARCHAR(16)"
+    type     = "VARCHAR(100)"
     nullable = true
     comment  = "name column comment"
   }
